@@ -21,6 +21,10 @@
     <%= form.text_field :birthday %>
   </div>
 
+  <%= form.fields_for :phones do |builder| %>
+    <%= render "phone_fields", form: builder %>
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
