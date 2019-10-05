@@ -4,28 +4,31 @@
       <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
       <ul>
-      <% contact.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% contact.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <div class=”fields”>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
 
-  <div class="field">
-    <%= form.label :birthday %>
-    <%= form.text_field :birthday %>
-  </div>
+    <div class="field">
+      <%= form.label :birthday %>
+      <%= form.text_field :birthday %>
+    </div>
 
-  <%= form.fields_for :phones do |builder| %>
-    <%= render "phone_fields", form: builder %>
-  <% end %>
+    <%= form.fields_for :phones do |builder| %>
+      <%= render "phone_fields", form: builder %>
+    <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+    <p><%= link_to_add_fields "Add Phone", form, :phones %></p>
   </div>
 <% end %>

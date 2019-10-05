@@ -1,6 +1,6 @@
-<p>
-  <%= form.label :number, "Number" %>
+<p class="fields">
+  <%= form.label :number, "Phone number" %>
   <%= form.text_field :number %>
-  <%= form.check_box :_destroy %>
-  <%= form.label :_destroy, "Remove" %>
+  <%= link_to_remove_fields "remove", form %>
+  <%= link_to "remove", "javascript:void(0)", onclick: 'remove_fields(this)' %>
 </p>
