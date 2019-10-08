@@ -14,6 +14,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery
 
 function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");
